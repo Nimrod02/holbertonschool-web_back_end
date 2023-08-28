@@ -10,4 +10,10 @@ school: str = "Holberton"
 
 
 def define():
+    """defin and annotate variables
+
+    Returns:
+        int, float, bool, str:
+        return the type of each varibles
+    """
     return a, pi, i_understand_annotations, school
