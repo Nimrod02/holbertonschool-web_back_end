@@ -10,7 +10,7 @@ import time
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(n, max_delay) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """ a measure_time function
     with integers n and max_delay as arguments
     that measures the total execution time for wait_n(n, max_delay),
@@ -35,12 +35,3 @@ def measure_time(n, max_delay) -> float:
     average_time = total_time / n
 
     return average_time
-
-
-if __name__ == "__main__":
-    n = 10
-    max_delay = 2
-
-    loop = asyncio.get_event_loop()
-    avg_execution_time = loop.run_until_complete(measure_time(n, max_delay))
-    loop.close()
