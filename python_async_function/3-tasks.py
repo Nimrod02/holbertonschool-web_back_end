@@ -15,8 +15,4 @@ def task_wait_random(max_delay: int) -> int:
     Args:
         max_delay (int): max delay for a task
     """
-    async def wrapper():
-        result = await wait_random(max_delay)
-        return result
-
-    return asyncio.create_task(wrapper())
+    return asyncio.create_task(wait_random(max_delay))
