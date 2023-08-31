@@ -3,6 +3,7 @@
 """
 
 
+import asyncio
 import time
 
 
@@ -22,15 +23,10 @@ def measure_time(n: int, max_delay: int) -> float:
     Returns:
         float: total time of execution
     """
-    total_time = 0
 
-    for _ in range(n):
-        start_time = time.time()
-        wait_n(n, max_delay)
-        end_time = time.time()
+    start_time = time.perf_counter()
+    asyncio.run(wait_n(n, max_delay))
+    elapsed = time.perf_counter() - start_time
+    total_time = elapsed / n
 
-        total_time += (end_time - start_time)
-
-    average_time = total_time / n
-
-    return average_time
+    return total_time

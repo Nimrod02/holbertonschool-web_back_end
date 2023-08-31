@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+module 4 - tasks
+"""
 
 
 import asyncio
@@ -22,5 +25,4 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     tasks = [task_wait_random(max_delay) for _ in range(n)]
     delays = await asyncio.gather(*tasks)
-    delays.sort()
-    return delays
+    return sorted(delays)
