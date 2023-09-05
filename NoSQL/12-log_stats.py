@@ -17,7 +17,7 @@ if __name__ == "__main__":
     print("Methods:")
     for method in methods:
         count_method = db.count_documents({"method": method})
-        print(f"\tmethod {method}: {count_method}")
+        print(f"\tmethod: {count_method}")
 
     check = db.count_documents({"method": "GET", "path": "/status"})
 
