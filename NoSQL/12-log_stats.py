@@ -9,13 +9,13 @@ if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
     db = client.logs.ngix
 
-    method = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
     count_logs = db.count_documents({})
     print(f"{count_logs} logs")
 
     print("Methods:")
-    for methods in method:
+    for method in methods:
         count_method = db.count_documents({"method": method})
         print(f"\tmethod {method}: {count_method}")
 
