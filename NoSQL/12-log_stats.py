@@ -15,7 +15,7 @@ if __name__ == "__main__":
     print(f"{count_logs} logs")
 
     print("Methods:")
-    for method in methods:
+    for methods in method:
         count_method = db.count_documents({"method": method})
         print(f"\tmethod {method}: {count_method}")
 
