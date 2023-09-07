@@ -76,12 +76,12 @@ class Server:
             page_size (int):length of the returned dataset page. Defaults to 10
             page (int): current page number. Defaults to 1
         """
-        data = self.get_page(page_size, page)
+        data = self.get_page(page, page_size)
 
         total_pages = math.ceil(len(self.dataset()) / page_size)
 
-        next_page = page + 1 if page < total_pages else None
         prev_page = page - 1 if page > 1 else None
+        next_page = page + 1 if page < total_pages else None
 
         hyper_dict = {
             "page_size": len(data),
