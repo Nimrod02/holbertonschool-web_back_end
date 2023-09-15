@@ -1,6 +1,5 @@
-    // eslint-disable-next-line no-unused-expressions
 export default function appendToEachArrayValue(array, appendring) {
-  const myarray = []
+  const myarray = [];
   for (const idx of array) {
     myarray.push(appendring + idx)
   }
