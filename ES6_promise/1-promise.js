@@ -1,5 +1,5 @@
 const status = 200;
-const body = 'sucess';
+const body = 'Sucess';
 const error = 'The fake API is not working currently';
 
 export default function getFullResponseFromAPI(success) {
